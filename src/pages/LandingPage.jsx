@@ -2,7 +2,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 
 function LandingPage() {
-  const { loginWithRedirect, logout, isAuthenticated, isLoading } = useAuth0();
+  const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
+    useAuth0();
   if (isLoading) {
     return <div>Loading ...</div>;
   }
@@ -10,23 +11,31 @@ function LandingPage() {
     <>
       <div className="landingContainer bg-black w-[100%] h-[100vh] font-primary">
         <div className="content h-[100vh] flex flex-col justify-evenly items-center border-2 border-white-700">
-          {!isAuthenticated ? (
-            <button
-              className="bg-black text-white text-[1.5rem] sm:text-[2rem] px-[2rem] sm:px-[4rem] hover:bg-white hover:text-black border-2 border-white-700"
-              onClick={() => loginWithRedirect()}
-            >
-              Log In
-            </button>
-          ) : (
-            <button
-              className="bg-black text-white text-[1.5rem] sm:text-[2rem] px-[2rem] sm:px-[4rem] hover:bg-white hover:text-black border-2 border-white-700"
-              onClick={() =>
-                logout({ logoutParams: { returnTo: window.location.origin } })
-              }
-            >
-              Log Out
-            </button>
-          )}
+          <div className="auth text-center">
+            {isAuthenticated && (
+              <h1 className="greeting text-secondary text-[1rem] vvsm:text-[1.5rem] vsm:text-[1.7rem] md:text-[2.5rem] sm:text-[2rem] mb-[1rem]">
+                Radhe-Radhe, {user.name}!
+              </h1>
+            )}
+            {!isAuthenticated ? (
+              <button
+                className="bg-black text-white text-[1.5rem] sm:text-[2rem] px-[2rem] sm:px-[4rem] hover:bg-white hover:text-black border-2 border-white-700"
+                onClick={() => loginWithRedirect()}
+              >
+                Log In
+              </button>
+            ) : (
+              <button
+                className="bg-black text-white text-[1.5rem] sm:text-[2rem] px-[2rem] sm:px-[4rem] hover:bg-white hover:text-black border-2 border-white-700"
+                onClick={() =>
+                  logout({ logoutParams: { returnTo: window.location.origin } })
+                }
+              >
+                Log Out
+              </button>
+            )}
+          </div>
+
           <div className="inputBox h-[25%] md:h-[30%] w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[35%] flex flex-col items-center justify-between border-2 p-4 border-white">
             <input
               className="border-none w-[100%] text-center text-[1rem] vsm:text-[1.3rem] md:text-[1.5rem] xl:text-[2rem] px-2 py-1"
