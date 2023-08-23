@@ -1,8 +1,8 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from "react-router-dom";
 
 function LandingPage() {
-  const { loginWithRedirect, logout, isAuthenticated, user, isLoading } =
-    useAuth0();
+  const { loginWithRedirect, logout, isAuthenticated, isLoading } = useAuth0();
   if (isLoading) {
     return <div>Loading ...</div>;
   }
@@ -35,33 +35,44 @@ function LandingPage() {
             />
             <div className="radioButtons my-2 w-[100%] flex justify-around items-center">
               <div className="textOnlyRadioButton flex justify-center">
-                <input 
-                className="mr-4 md:mr-8"
+                <input
+                  className="mr-4 md:mr-8"
                   type="radio"
                   id="textOnly"
                   name="contentType"
                   value={"true"}
                 />
-                <label className="text-primary text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]" htmlFor="textOnly">
+                <label
+                  className="text-primary text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
+                  htmlFor="textOnly"
+                >
                   Text Only
                 </label>
               </div>
               <div className="htmlRadioButton flex justify-center">
                 <input
-                className="mr-4 md:mr-8"
+                  className="mr-4 md:mr-8"
                   type="radio"
                   id="radioHtml"
                   name="contentType"
                   value={"false"}
                 />
-                <label className="text-primary text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]" htmlFor="radioHtml">
+                <label
+                  className="text-primary text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
+                  htmlFor="radioHtml"
+                >
                   HTML
                 </label>
               </div>
             </div>
-            <button className="bg-transparent text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem] text-primary px-16 hover:bg-primary hover:text-black border-2 border-primary">Scrape</button>
+            <Link
+              to="/homepage"
+              className="bg-transparent text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem] text-primary px-16 hover:bg-primary hover:text-black border-2 border-primary"
+            >
+              Scrape
+            </Link>
           </div>
-          <h3 className="text-primary text-[1rem] vsm:text-[1.2rem] md:text-[2rem] sm:text-[1.5rem]">
+          <h3 className="text-secondary text-[1rem] vsm:text-[1.2rem] md:text-[2rem] sm:text-[1.5rem]">
             Made with <span>&#x2764;</span> by Mister Mickey
           </h3>
         </div>
