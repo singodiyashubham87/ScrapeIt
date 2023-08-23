@@ -12,6 +12,7 @@ export default {
       },
       screens: {
         'vsm': '406px',
+        'vvsm': '100px',
       },
     },
   },
