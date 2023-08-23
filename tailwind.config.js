@@ -9,7 +9,10 @@ export default {
       },
       fontFamily: {
         primary: 'IBM Plex Mono',
-      }
+      },
+      screens: {
+        'vsm': '406px',
+      },
     },
   },
   plugins: [],
