@@ -1,16 +1,18 @@
-import { useAuth0 } from "@auth0/auth0-react";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Link, useNavigate } from "react-router-dom";
 
 function LandingPage() {
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
     useAuth0();
 
+  const navigateTo = useNavigate();
+
   const handleScrapeClick = async () => {
     const urlElement = document.getElementById("url").value;
     const radioElements = document.getElementsByName("contentType");
 
-    if (urlElement === "") alert("Please enter a URL")
+    if (urlElement === "") alert("Please enter a URL");
     else {
       const apiKey = import.meta.env.VITE_API_NINJAS_X_API_KEY;
       const textOnly = radioElements[0].checked ? true : false;
@@ -22,7 +24,7 @@ function LandingPage() {
           text_only: textOnly,
         })
         .catch((error) => console.warn(error));
-      console.log(res.data.data);
+      navigateTo("/homepage", { state: { data: res.data.data } });
     }
   };
 
