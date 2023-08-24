@@ -17,7 +17,6 @@ function LandingPage() {
       const apiKey = import.meta.env.VITE_API_NINJAS_X_API_KEY;
       const textOnly = radioElements[0].checked ? true : false;
       const url = `https://api.api-ninjas.com/v1/webscraper?url=${urlElement}&text_only=${textOnly}`;
-
       const res = await axios
         .get(url, {
           headers: { "X-Api-Key": apiKey },
