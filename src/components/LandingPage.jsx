@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link, useNavigate } from "react-router-dom";
+import Loader from "./Loader"
+
 
 function LandingPage() {
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
@@ -8,11 +10,14 @@ function LandingPage() {
 
   const navigateTo = useNavigate();
 
+  // Click handler for Scrape button 
   const handleScrapeClick = async () => {
     const urlElement = document.getElementById("url").value;
     const radioElements = document.getElementsByName("contentType");
 
+    
     if (urlElement === "") alert("Please enter a URL");
+
     else {
       const apiKey = import.meta.env.VITE_API_NINJAS_X_API_KEY;
       const textOnly = radioElements[0].checked ? true : false;
@@ -27,9 +32,11 @@ function LandingPage() {
     }
   };
 
+  // Returns Loader component if authentication is in progress 
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return <Loader />;
   }
+
   return (
     <>
       <div className="landingContainer bg-black w-[100%] h-[100vh] font-primary">
