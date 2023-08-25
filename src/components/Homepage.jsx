@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import html2pdf from "html2pdf.js";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -6,10 +7,29 @@ function Homepage() {
   const { isAuthenticated } = useAuth0();
   const location = useLocation();
   const fetchedData = location.state?.data;
+  const [showModal, setShowModal] = useState(false);
+
+  const closeModal = () => setShowModal(false);
+
+  const showModalComponent = () => {
+      return ( 
+        <>
+        <div onClick={closeModal} className="wrapper h-[100vh] w-[100vw] bg-[#CAEDFF] fixed opacity-[90%]"></div>
+        <div className="modalContainer fixed bg-black border border-black flex flex-col justify-center items-center px-[2rem] py-[1rem]">
+          <h1 className="text-white text-[1.3rem] text-yellow-500">Alert!</h1>
+          <p className="text-white m-[1rem] text-[1.3rem]">Login to download PDF</p>
+          <div className="buttons w-[100%] flex justify-evenly">
+            <button className="login bg-primary px-[1rem] py-[.5rem]">Login</button>
+            <button onClick={closeModal} className="close bg-primary px-[1rem] py-[.5rem]">Close</button>
+          </div>
+        </div>
+        </>
+      );
+  }
 
   const handleDownloadPDF = () => {
     if (!isAuthenticated) {
-      alert("Please login to download PDF");
+      setShowModal(true);
     } else {
       const worker = html2pdf();
       const opt = {
@@ -34,6 +54,7 @@ function Homepage() {
       >
         Download
       </button>
+      {showModal && showModalComponent()}
     </div>
   );
 }
