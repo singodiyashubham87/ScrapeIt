@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Loader from "./Loader"
 
 
@@ -8,14 +8,12 @@ function LandingPage() {
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
     useAuth0();
 
-  const navigateTo = useNavigate();
-
   // Click handler for Scrape button 
   const handleScrapeClick = async () => {
     const urlElement = document.getElementById("url").value;
     const radioElements = document.getElementsByName("contentType");
 
-    
+
     if (urlElement === "") alert("Please enter a URL");
 
     else {
@@ -28,7 +26,11 @@ function LandingPage() {
           text_only: textOnly,
         })
         .catch((error) => console.warn(error));
-      navigateTo("/homepage", { state: { data: res.data.data } });
+
+        // we can pass data through this way too but will become undefined on page reload 
+        // navigateTo = useNavigate();
+        // navigateTo("/homepage", { state: { data: res.data.data } }); 
+        sessionStorage.setItem("data", res.data.data);
     }
   };
 
