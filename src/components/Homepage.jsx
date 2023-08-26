@@ -1,31 +1,58 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import html2pdf from "html2pdf.js";
 import { useAuth0 } from "@auth0/auth0-react";
+import Loader from "./Loader";
+
 
 function Homepage() {
-  const { isAuthenticated } = useAuth0();
-  const location = useLocation();
-  const fetchedData = location.state?.data;
+  const { isAuthenticated, loginWithRedirect, isLoading } = useAuth0();
   const [showModal, setShowModal] = useState(false);
+  const fetchedData = sessionStorage.getItem('data');
+  
+  // we can get the data passed from navigateTo()'s state param like this 
+  // const location = useLocation();
+  // const fetchedData = location.state?.data;
+
+  if (isLoading) return <Loader />;
 
   const closeModal = () => setShowModal(false);
 
   const showModalComponent = () => {
-      return ( 
-        <>
-        <div onClick={closeModal} className="wrapper h-[100vh] w-[100vw] bg-[#272829] fixed opacity-[90%]"></div>
+    return (
+      <>
+        <div
+          onClick={closeModal}
+          className="wrapper h-[100vh] w-[100vw] bg-[#272829] fixed opacity-[90%]"
+        ></div>
         <div className="modalContainer fixed bg-black border-2 border-primary flex flex-col justify-center items-center px-[2rem] py-[1rem] md:px-[4rem] md:py-[2rem] xl:px-[5rem] xl:py-[3rem]">
-          <h1 className="text-white text-[1.3rem] md:text-[1.7rem] xl:text-[2rem] text-yellow-500">Alert!</h1>
-          <p className="text-white m-[1rem] md:m-[1.5rem] xl:m-[2rem] text-[1.3rem] xl:text-[2rem] md:text-[1.7rem]">Login to download PDF</p>
+          <h1 className="text-white text-[1.3rem] md:text-[1.7rem] xl:text-[2rem] text-yellow-500">
+            Alert!
+          </h1>
+          <p className="text-white m-[1rem] md:m-[1.5rem] xl:m-[2rem] text-[1.3rem] xl:text-[2rem] md:text-[1.7rem]">
+            Login to download PDF
+          </p>
           <div className="buttons w-[100%] flex justify-evenly">
-            <button className="login text-white border border-primary hover:bg-primary hover:text-black md:text-[1.5rem] px-[1rem] py-[.5rem] xl:px-[3rem] xl:py-[1rem]">Login</button>
-            <button onClick={closeModal} className="close md:text-[1.5rem] text-white border border-primary hover:bg-primary hover:text-black px-[1rem] py-[.5rem] xl:px-[3rem] xl:py-[1rem]">Close</button>
+            <button
+              onClick={() =>
+                loginWithRedirect({
+                  redirectUri: "http://localhost:5173/homepage",
+                })
+              }
+              className="login text-white border border-primary hover:bg-primary hover:text-black md:text-[1.5rem] px-[1rem] py-[.5rem] xl:px-[3rem] xl:py-[1rem]"
+            >
+              Login
+            </button>
+            <button
+              onClick={closeModal}
+              className="close md:text-[1.5rem] text-white border border-primary hover:bg-primary hover:text-black px-[1rem] py-[.5rem] xl:px-[3rem] xl:py-[1rem]"
+            >
+              Close
+            </button>
           </div>
         </div>
-        </>
-      );
-  }
+      </>
+    );
+  };
 
   const handleDownloadPDF = () => {
     if (!isAuthenticated) {
