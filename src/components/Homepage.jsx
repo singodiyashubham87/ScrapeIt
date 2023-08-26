@@ -14,13 +14,13 @@ function Homepage() {
   const showModalComponent = () => {
       return ( 
         <>
-        <div onClick={closeModal} className="wrapper h-[100vh] w-[100vw] bg-[#CAEDFF] fixed opacity-[90%]"></div>
-        <div className="modalContainer fixed bg-black border border-black flex flex-col justify-center items-center px-[2rem] py-[1rem]">
-          <h1 className="text-white text-[1.3rem] text-yellow-500">Alert!</h1>
-          <p className="text-white m-[1rem] text-[1.3rem]">Login to download PDF</p>
+        <div onClick={closeModal} className="wrapper h-[100vh] w-[100vw] bg-[#272829] fixed opacity-[90%]"></div>
+        <div className="modalContainer fixed bg-black border-2 border-primary flex flex-col justify-center items-center px-[2rem] py-[1rem] md:px-[4rem] md:py-[2rem] xl:px-[5rem] xl:py-[3rem]">
+          <h1 className="text-white text-[1.3rem] md:text-[1.7rem] xl:text-[2rem] text-yellow-500">Alert!</h1>
+          <p className="text-white m-[1rem] md:m-[1.5rem] xl:m-[2rem] text-[1.3rem] xl:text-[2rem] md:text-[1.7rem]">Login to download PDF</p>
           <div className="buttons w-[100%] flex justify-evenly">
-            <button className="login bg-primary px-[1rem] py-[.5rem]">Login</button>
-            <button onClick={closeModal} className="close bg-primary px-[1rem] py-[.5rem]">Close</button>
+            <button className="login text-white border border-primary hover:bg-primary hover:text-black md:text-[1.5rem] px-[1rem] py-[.5rem] xl:px-[3rem] xl:py-[1rem]">Login</button>
+            <button onClick={closeModal} className="close md:text-[1.5rem] text-white border border-primary hover:bg-primary hover:text-black px-[1rem] py-[.5rem] xl:px-[3rem] xl:py-[1rem]">Close</button>
           </div>
         </div>
         </>
