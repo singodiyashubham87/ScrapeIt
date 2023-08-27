@@ -2,10 +2,12 @@ import { useState } from "react";
 import html2pdf from "html2pdf.js";
 import { useAuth0 } from "@auth0/auth0-react";
 import Loader from "./Loader";
+import { useNavigate } from "react-router";
 
 
 function Homepage() {
   const { isAuthenticated, loginWithRedirect, isLoading } = useAuth0();
+  const navigateTo = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const fetchedData = sessionStorage.getItem('data');
   
@@ -54,6 +56,10 @@ function Homepage() {
     );
   };
 
+  // Click handler for ReScrape button 
+  const handleReScrape = () => navigateTo("/");
+
+  // Click handler for Download button 
   const handleDownloadPDF = () => {
     if (!isAuthenticated) {
       setShowModal(true);
@@ -75,12 +81,21 @@ function Homepage() {
         {" "}
         <code>{fetchedData}</code>
       </p>
+      <div className="buttons flex flex-col text-center w-[90%] vsm:w-[80%]  md:flex-row justify-evenly items-center">
       <button
         onClick={handleDownloadPDF}
-        className="download bg-transparent text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem] text-white px-16 hover:bg-white hover:text-black border-2 border-white"
-      >
+        className="download bg-transparent text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem] text-white px-16 hover:bg-white hover:text-black border-2 border-white mb-[1rem] md:mb-[0]"
+        >
         Download
       </button>
+      <button
+        onClick={handleReScrape}
+        className="download bg-transparent text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem] text-white px-16 hover:bg-white hover:text-black border-2 border-white"
+      >
+        ReScrape
+      </button>
+        </div>
+
       {showModal && showModalComponent()}
     </div>
   );
