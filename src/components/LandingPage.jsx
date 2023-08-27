@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import DOMPurify from 'dompurify'
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
@@ -47,10 +48,17 @@ function LandingPage() {
           setShowModal(true);
         });
 
-      // we can pass data through this way too but will become undefined on page reload
-      // navigateTo = useNavigate();
-      // navigateTo("/homepage", { state: { data: res.data.data } });
-      sessionStorage.setItem("data", res.data.data);
+        let scrapedData = res.data.data;
+
+        // Sanitizing the received HTML to prevent XSS vulnerabilities
+        if(!textOnly){
+          scrapedData = DOMPurify.sanitize(`${scrapedData}`)
+        }
+        
+        // we can pass data through this way too but will become undefined on page reload
+        // navigateTo = useNavigate();
+        // navigateTo("/homepage", { state: { data: res.data.data } });
+        sessionStorage.setItem("data", scrapedData);
       navigateTo("homepage");
     }
   };
