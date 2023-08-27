@@ -9,6 +9,7 @@ function LandingPage() {
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
     useAuth0();
   const [showModal, setShowModal] = useState(false);
+  const [alert, setAlert] = useState("");
   const [alertError, setAlertError] = useState("");
   const [loader, setLoader] = useState(false);
   const navigateTo = useNavigate();
@@ -38,9 +39,12 @@ function LandingPage() {
           headers: { "X-Api-Key": apiKey },
           text_only: textOnly,
         })
-        .catch((error) =>{
+        .catch((error) => {
           setLoader(false);
-          console.warn(error)
+          console.warn(error);
+          setAlert("API Error!");
+          setAlertError("Please try again later");
+          setShowModal(true);
         });
 
       // we can pass data through this way too but will become undefined on page reload
@@ -62,7 +66,7 @@ function LandingPage() {
         ></div>
         <div className="modalContainer w-[90%] vsm:w-[75%] sm:w-[60%] md:w-[auto] fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-black border-2 border-primary flex flex-col justify-center items-center px-[1rem] py-[1rem] md:px-[4rem] md:py-[2rem] xl:px-[5rem] xl:py-[3rem] ">
           <h1 className="text-white text-[1.3rem] md:text-[1.7rem] xl:text-[2rem] text-yellow-500">
-            Alert!
+            {alert || "Alert!"}
           </h1>
           <p className="text-white text-center m-[1rem] md:m-[1.5rem] xl:m-[2rem] text-[1.3rem] xl:text-[2rem] md:text-[1.7rem]">
             {alertError}
@@ -78,14 +82,18 @@ function LandingPage() {
     );
   };
 
-
-  const showLoaderImage = () =>{
+  const showLoaderImage = () => {
     return (
-        <div className="loaderContainer w-[100vw] fixed top-[0] bottom-[0] right-[0] left-[0] bg-[#272829] flex justify-center items-center opacity-[90%]">
-        <img id="logo" src={logo} alt="loader" className=" border-4 border-white w-[150px] sm:w-[200px] rounded-[50%] animate-spin"/>
-        </div>
+      <div className="loaderContainer w-[100vw] fixed top-[0] bottom-[0] right-[0] left-[0] bg-[#272829] flex justify-center items-center opacity-[90%]">
+        <img
+          id="logo"
+          src={logo}
+          alt="loader"
+          className=" border-4 border-white w-[150px] sm:w-[200px] rounded-[50%] animate-spin"
+        />
+      </div>
     );
-  }
+  };
 
   // Returns Loader component if authentication is in progress
   if (isLoading) {
