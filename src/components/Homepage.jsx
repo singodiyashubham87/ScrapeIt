@@ -37,7 +37,7 @@ function Homepage() {
             <button
               onClick={() =>
                 loginWithRedirect({
-                  redirectUri: "http://localhost:5173/homepage",
+                  redirectUri: "https://scrape-it-seven.vercel.app/homepage",
                 })
               }
               className="login text-white border border-primary hover:bg-primary hover:text-black md:text-[1.5rem] px-[1rem] py-[.5rem] xl:px-[3rem] xl:py-[1rem]"
