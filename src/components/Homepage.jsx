@@ -15,10 +15,13 @@ function Homepage() {
   // const location = useLocation();
   // const fetchedData = location.state?.data;
 
+  // Display loader while authentication is in progress
   if (isLoading) return <Loader />;
 
+  // Function to close the modal
   const closeModal = () => setShowModal(false);
 
+  // Modal/Popup Component to show login alert
   const showModalComponent = () => {
     return (
       <>
@@ -37,7 +40,7 @@ function Homepage() {
             <button
               onClick={() =>
                 loginWithRedirect({
-                  redirectUri: "https://scrape-it-seven.vercel.app/homepage",
+                  redirectUri: "http://localhost:5173/homepage",
                 })
               }
               className="login text-white border border-primary hover:bg-primary hover:text-black md:text-[1.5rem] px-[1rem] py-[.5rem] xl:px-[3rem] xl:py-[1rem]"
@@ -64,6 +67,7 @@ function Homepage() {
     if (!isAuthenticated) {
       setShowModal(true);
     } else {
+      // Create PDF using html2pdf library
       const worker = html2pdf();
       const opt = {
         margin: 5,
@@ -73,6 +77,7 @@ function Homepage() {
       worker.from(fetchedData, "string").to("pdf").set(opt).save();
     }
   };
+
 
   return (
     <div className="homepageContainer font-primary h-[100vh] w-[100%] bg-black flex flex-col items-center justify-evenly">
