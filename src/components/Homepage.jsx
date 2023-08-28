@@ -11,6 +11,7 @@ function Homepage() {
   const [showModal, setShowModal] = useState(false);
   const fetchedData = sessionStorage.getItem('data');
   
+  
   // we can get the data passed from navigateTo()'s state param like this 
   // const location = useLocation();
   // const fetchedData = location.state?.data;
@@ -20,6 +21,9 @@ function Homepage() {
   const closeModal = () => setShowModal(false);
 
   const showModalComponent = () => {
+
+    const redirectUrl = import.meta.env.VITE_AUTH0_REDIRECT_URL;
+
     return (
       <>
         <div
@@ -37,7 +41,7 @@ function Homepage() {
             <button
               onClick={() =>
                 loginWithRedirect({
-                  redirectUri: "http://localhost:5173/homepage",
+                  redirectUri: `${redirectUrl}/homepage`,
                 })
               }
               className="login text-white border border-primary hover:bg-primary hover:text-black md:text-[1.5rem] px-[1rem] py-[.5rem] xl:px-[3rem] xl:py-[1rem]"
