@@ -25,8 +25,6 @@ function Homepage() {
   // Modal/Popup Component to show login alert
   const showModalComponent = () => {
 
-    const redirectUrl = import.meta.env.VITE_AUTH0_REDIRECT_URL;
-
     return (
       <>
         <div
@@ -44,7 +42,7 @@ function Homepage() {
             <button
               onClick={() =>
                 loginWithRedirect({
-                  redirectUri: `${redirectUrl}/homepage`,
+                  redirectUri: window.location.href,
                 })
               }
               className="login text-white border border-primary hover:bg-primary hover:text-black md:text-[1.5rem] px-[1rem] py-[.5rem] xl:px-[3rem] xl:py-[1rem]"
