@@ -1,5 +1,5 @@
 import axios from "axios";
-import DOMPurify from 'dompurify'
+import DOMPurify from "dompurify";
 import { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
@@ -7,76 +7,80 @@ import Loader from "./Loader";
 import logo from "../assets/images/scraperLogo.png";
 
 function LandingPage() {
-  // Auth0 Hooks 
+  // Auth0 Hooks
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
     useAuth0();
 
-    // State Variables 
+  // State Variables
   const [showModal, setShowModal] = useState(false); //toggle modal
   const [alert, setAlert] = useState(""); //alert heading in modal component
   const [alertError, setAlertError] = useState(""); //alert message in modal component
   const [loader, setLoader] = useState(false); //loader variable
 
-  // Navigation Hook 
+  // Navigation Hook
   const navigateTo = useNavigate();
 
   // Click handler for Scrape button
   const handleScrapeClick = async () => {
-    
-    // loader image will be shown until response is received from API 
-    setLoader(true);
-    
-    // extracting necessary values from elements for api request 
-    const urlElement = document.getElementById("url").value;
-    const radioElements = document.getElementsByName("contentType");
-
-    // Validating URL 
-    const urlRegex = /^(http[s]?:\/\/)(www\.)?[^\s$.?#].[^\s]*$/i;
-    if (urlElement === "") {
-      setLoader(false);
-      setAlertError("Please enter a URL");
-      setShowModal(true);
-    } else if (!urlRegex.test(urlElement)) {
-      setLoader(false);
-      setAlertError("Please enter a valid URL");
+    if (!isAuthenticated) {
+      setAlertError("Login to continue");
       setShowModal(true);
     } else {
-      const apiKey = import.meta.env.VITE_API_NINJAS_X_API_KEY;
-      const textOnly = radioElements[0].checked ? true : false; // Check if user want text only response or HTML
-      const url = `https://api.api-ninjas.com/v1/webscraper?url=${urlElement}&text_only=${textOnly}`;
-      const res = await axios
-        .get(url, {
-          headers: { "X-Api-Key": apiKey },
-          text_only: textOnly,
-        })
-        .catch((error) => {
-          setLoader(false);
-          console.warn(error);
-          setAlert("API Error!");
-          setAlertError("Please try again later");
-          setShowModal(true);
-        });
+      // loader image will be shown until response is received from API
+      setLoader(true);
+
+      // extracting necessary values from elements for api request
+      const urlElement = document.getElementById("url").value;
+      const radioElements = document.getElementsByName("contentType");
+
+      // Validating URL
+      const urlRegex = /^(http[s]?:\/\/)(www\.)?[^\s$.?#].[^\s]*$/i;
+      if (urlElement === "") {
+        setLoader(false);
+        setAlertError("Please enter a URL");
+        setShowModal(true);
+      } else if (!urlRegex.test(urlElement)) {
+        setLoader(false);
+        setAlertError("Please enter a valid URL");
+        setShowModal(true);
+      } else {
+        const apiKey = import.meta.env.VITE_API_NINJAS_X_API_KEY;
+        const textOnly = radioElements[0].checked ? true : false; // Check if user want text only response or HTML
+        const url = `https://api.api-ninjas.com/v1/webscraper?url=${urlElement}&text_only=${textOnly}`;
+        const res = await axios
+          .get(url, {
+            headers: { "X-Api-Key": apiKey },
+            text_only: textOnly,
+          })
+          .catch((error) => {
+            setLoader(false);
+            console.warn(error);
+            setAlert("API Error!");
+            setAlertError("Please try again later");
+            setShowModal(true);
+          });
 
         let scrapedData = res.data.data;
 
         // Sanitizing the received HTML to prevent XSS vulnerabilities
-        if(!textOnly){
-          scrapedData = DOMPurify.sanitize(`${scrapedData}`)
+        if (!textOnly) {
+          scrapedData = DOMPurify.sanitize(`${scrapedData}`);
         }
-        
+
         // we can pass data through this way too but will become undefined on page reload
         // navigateTo = useNavigate();
         // navigateTo("/homepage", { state: { data: res.data.data } });
         sessionStorage.setItem("data", scrapedData);
-        setLoader(false); //removing image before leaving page 
+        setLoader(false); //removing image before leaving page
         navigateTo("homepage");
+      }
     }
   };
 
-   // Modal and loader handling functions
+  // Modal and loader handling functions
   const closeModal = () => setShowModal(false);
 
-  // Modal Component/Popup box 
+  // Modal Component/Popup box
   const showModalComponent = () => {
     return (
       <>
@@ -102,7 +106,7 @@ function LandingPage() {
     );
   };
 
-  // loader image component 
+  // loader image component
   const showLoaderImage = () => {
     return (
       <div className="loaderContainer w-[100vw] fixed top-[0] bottom-[0] right-[0] left-[0] bg-[#272829] flex justify-center items-center opacity-[90%]">
@@ -120,7 +124,6 @@ function LandingPage() {
   if (isLoading) {
     return <Loader />;
   }
-  
 
   return (
     <>
