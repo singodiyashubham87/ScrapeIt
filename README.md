@@ -54,7 +54,7 @@ npm run dev
 API Ninjas (https://api.api-ninjas.com/): For providing the web scraping API.
 
 ## Author
-<i>Shubham Singodiya</i>
+* <i>Shubham Singodiya</i>
 
 ## License
 This project is licensed under the MIT License.
