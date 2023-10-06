@@ -1,0 +1,7 @@
+ > Tailwind utilitity classes won't work if postcss and autoprefixer is not configured
+ > .env must have to be in root directory and .env.local has more precedence over .env as it is developer's local variables and .env contains global ones
+ > Auth0 red warning icon comes because we use the developer keys and to remove that got to social connections and add your own client secret and domain
+ > sanitizedHTML = safe or cleaned up HTML. The ".replace()" method is used to replace all occurrences of < with &lt; and > with &gt;. This transforms the characters into their HTML entity form, preventing them from being treated as opening and closing HTML tags.
+ > "DOMPurify" is a library designed to help prevent XSS attacks by sanitizing and cleaning up potentially unsafe HTML and DOM content. DOMPurify will remove <script> tags and any JavaScript code within them to prevent the execution of scripts that could be used for malicious purposes. HTML sanitization is the process of examining an HTML document and producing a new HTML document that preserves only whatever tags are designated "safe" and desired. 
+ > Ways to transfer data within components or pages: ReactURL, state, localStorage, libraries like redux and contextAPI
+ > The useNavigate() hook of 'react-router-dom' returns a function that lets you navigate programmatically using navigateTo("<Endpoint_Url>") method
