@@ -15,7 +15,7 @@
 
 ## Getting Started
 
-### Prerequisites
+### Prerequisite
 
 - Node.js (https://nodejs.org/) installed on your machine.
 
