@@ -164,7 +164,7 @@ function LandingPage() {
             <div className="radioButtons my-2 w-[100%] flex justify-around items-center">
               <div className="textOnlyRadioButton flex justify-center">
                 <input
-                  className="mr-4 md:mr-8"
+                  className="mr-4 md:mr-8 cursor-pointer"
                   type="radio"
                   id="textOnly"
                   name="contentType"
@@ -179,7 +179,7 @@ function LandingPage() {
               </div>
               <div className="htmlRadioButton flex justify-center">
                 <input
-                  className="mr-4 md:mr-8"
+                  className="mr-4 md:mr-8 cursor-pointer"
                   type="radio"
                   id="radioHtml"
                   name="contentType"
