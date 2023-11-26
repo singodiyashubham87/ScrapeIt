@@ -136,7 +136,7 @@ function LandingPage() {
           <div className="auth text-center">
             {isAuthenticated && (
               <h1 className="greeting text-secondary text-[1rem] vvsm:text-[1.5rem] vsm:text-[1.7rem] md:text-[2.5rem] sm:text-[2rem] mb-[1rem]">
-                Radhe-Radhe, {user.name}!
+                Hello, {user.name}!
               </h1>
             )}
             {!isAuthenticated ? (
