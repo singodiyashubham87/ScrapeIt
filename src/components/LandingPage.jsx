@@ -16,13 +16,17 @@ function LandingPage() {
   const [alert, setAlert] = useState(""); //alert heading in modal component
   const [alertError, setAlertError] = useState(""); //alert message in modal component
   const [loader, setLoader] = useState(false); //loader variable
+  const [selectedRadioButton, setSelectedRadioButton] = useState(false);
 
   // Navigation Hook
   const navigateTo = useNavigate();
 
   // Click handler for Scrape button
   const handleScrapeClick = async () => {
-    if (!isAuthenticated) {
+    if (!selectedRadioButton) {
+      setAlertError("Please select either Text Only or HTML");
+      setShowModal(true);
+    } else if (!isAuthenticated) {
       setAlertError("Login to continue");
       setShowModal(true);
     } else {
@@ -169,6 +173,7 @@ function LandingPage() {
                   id="textOnly"
                   name="contentType"
                   value={"true"}
+                  onChange={() => setSelectedRadioButton("true")}
                 />
                 <label
                   className="text-primary text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
@@ -184,6 +189,7 @@ function LandingPage() {
                   id="radioHtml"
                   name="contentType"
                   value={"false"}
+                  onChange={() => setSelectedRadioButton("true")}
                 />
                 <label
                   className="text-primary text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
