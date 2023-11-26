@@ -173,7 +173,6 @@ function LandingPage() {
                   id="textOnly"
                   name="contentType"
                   value={"true"}
-                  checked={selectedRadioButton === "true"}
                   onChange={() => setSelectedRadioButton("true")}
                 />
                 <label
@@ -190,8 +189,7 @@ function LandingPage() {
                   id="radioHtml"
                   name="contentType"
                   value={"false"}
-                  checked={selectedRadioButton === "false"}
-                  onChange={() => setSelectedRadioButton("false")}
+                  onChange={() => setSelectedRadioButton("true")}
                 />
                 <label
                   className="text-primary text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
