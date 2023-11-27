@@ -132,9 +132,9 @@ function LandingPage() {
         <div className="content h-[100vh] flex flex-col justify-evenly items-center border-2 border-white-700">
           <Link
             to={"https://github.com/singodiyashubham87/ScrapeIt"}
-            className="fixed top-0 right-0 p-10"
+            className="fixed top-0 right-2 p-6"
           >
-            <img src={ghlogo} alt="small_github_logo" width={70} />
+            <img src={ghlogo} alt="small_github_logo" className="h-20"/>
           </Link>
           <div className="auth text-center">
             {isAuthenticated && (
