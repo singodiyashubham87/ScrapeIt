@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
 import logo from "../assets/images/scraperLogo.png";
 
+// LandingPage component for handling scraping and authentication
 function LandingPage() {
   // Auth0 Hooks
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
@@ -23,6 +24,7 @@ function LandingPage() {
 
   // Click handler for Scrape button
   const handleScrapeClick = async () => {
+    // Validation and error handling
     if (!selectedRadioButton) {
       setAlertError("Please select either Text Only or HTML");
       setShowModal(true);
@@ -48,9 +50,12 @@ function LandingPage() {
         setAlertError("Please enter a valid URL");
         setShowModal(true);
       } else {
+        // API request configuration
         const apiKey = import.meta.env.VITE_API_NINJAS_X_API_KEY;
         const textOnly = radioElements[0].checked ? true : false; // Check if user want text only response or HTML
         const url = `https://api.api-ninjas.com/v1/webscraper?url=${urlElement}&text_only=${textOnly}`;
+
+         // API request using axios
         const res = await axios
           .get(url, {
             headers: { "X-Api-Key": apiKey },
