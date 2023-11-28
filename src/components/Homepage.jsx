@@ -1,5 +1,6 @@
 import html2pdf from "html2pdf.js";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
+import ghlogo from "../assets/images/ghlogo.png";
 
 function Homepage() {
   const navigateTo = useNavigate();
@@ -26,6 +27,12 @@ function Homepage() {
 
   return (
     <div className="homepageContainer font-primary h-[100vh] w-[100%] bg-black flex flex-col items-center justify-evenly">
+      <Link
+        to={"https://github.com/singodiyashubham87/ScrapeIt"}
+        className="absolute top-0 right-0 p-6"
+      >
+        <img src={ghlogo} alt="small_github_logo" className="h-14"/>
+      </Link>
       <span className="bg-white text-[2rem] px-[2rem]">Scrapped Data:</span>
       <p className="scrapedData bg-primary max-w-[90%] vsm:w-[80%] max-h-[70%] overflow-y-auto text-black md:text-[1.5rem] xl:text-[2rem] vvsm:text-[1rem] py-[1rem] px-[4rem] vvsm:px-[2rem] border-4 border-white">
         {" "}

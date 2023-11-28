@@ -134,7 +134,7 @@ function LandingPage() {
             to={"https://github.com/singodiyashubham87/ScrapeIt"}
             className="fixed top-0 right-2 p-6"
           >
-            <img src={ghlogo} alt="small_github_logo" className="h-20"/>
+            <img src={ghlogo} alt="small_github_logo" className="h-14"/>
           </Link>
           <div className="auth text-center">
             {isAuthenticated && (
