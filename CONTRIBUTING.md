@@ -6,7 +6,7 @@ Thank you for taking the time to contribute to the project. Please take a moment
 
 - If anything is missing or if you find something which need to be enhanced/fixed/modified in the project, please feel free to [create an issue.](https://github.com/singodiyashubham87/ScrapeIt/issues/new/choose)
 - Ask to get the issue assigned to you before working on the issue & making a PR.
-Don't create a PR until the issue is not assigned to you.
+- Don't create a PR until the issue is not assigned to you.
 - Mention the issue number in the PRs and describe all the changes that you have made briefly in the PR.
 
 ## How to Contribute? 🤔
@@ -118,7 +118,7 @@ Provide a clear and informative title and description for your pull request. Exp
 
 Review your pull request to ensure everything is correct, and then click on the "Create pull request" button to submit it.
 
-### Congrats!🎉
+### Congratulations! 🎉
 
 Your pull request will now be visible to the maintainers of the original repository. They will review your changes, provide feedback if necessary, and decide whether to merge them into the main branch.
 
