@@ -2,9 +2,10 @@ import axios from "axios";
 import DOMPurify from "dompurify";
 import { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loader from "./Loader";
 import logo from "../assets/images/scraperLogo.png";
+import ghlogo from "../assets/images/ghlogo.png";
 
 // LandingPage component for handling scraping and authentication
 function LandingPage() {
@@ -151,6 +152,12 @@ const getGreeting = () => {
     <>
       <div className="landingContainer bg-black w-[100%] h-[100vh] font-primary">
         <div className="content h-[100vh] flex flex-col justify-evenly items-center border-2 border-white-700">
+          <Link
+            to={"https://github.com/singodiyashubham87/ScrapeIt"}
+            className="absolute top-0 right-0 p-6"
+          >
+            <img src={ghlogo} alt="small_github_logo" className="max-h-14 ghlogo-vsm:h-[3rem] ghlogo-vvsm:h-[2.5rem]"/>
+          </Link>
           <div className="auth text-center">
             {isAuthenticated && (
               <h1 className="greeting text-secondary text-[1rem] vvsm:text-[1.5rem] vsm:text-[1.7rem] md:text-[2.5rem] sm:text-[2rem] mb-[1rem]">
