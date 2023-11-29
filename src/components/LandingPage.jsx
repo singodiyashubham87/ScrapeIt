@@ -7,6 +7,7 @@ import Loader from "./Loader";
 import logo from "../assets/images/scraperLogo.png";
 import ghlogo from "../assets/images/ghlogo.png";
 
+// LandingPage component for handling scraping and authentication
 function LandingPage() {
   // Auth0 Hooks
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
@@ -17,13 +18,18 @@ function LandingPage() {
   const [alert, setAlert] = useState(""); //alert heading in modal component
   const [alertError, setAlertError] = useState(""); //alert message in modal component
   const [loader, setLoader] = useState(false); //loader variable
+  const [selectedRadioButton, setSelectedRadioButton] = useState(false);
 
   // Navigation Hook
   const navigateTo = useNavigate();
 
   // Click handler for Scrape button
   const handleScrapeClick = async () => {
-    if (!isAuthenticated) {
+    // Validation and error handling
+    if (!selectedRadioButton) {
+      setAlertError("Please select either Text Only or HTML");
+      setShowModal(true);
+    } else if (!isAuthenticated) {
       setAlertError("Login to continue");
       setShowModal(true);
     } else {
@@ -45,9 +51,12 @@ function LandingPage() {
         setAlertError("Please enter a valid URL");
         setShowModal(true);
       } else {
+        // API request configuration
         const apiKey = import.meta.env.VITE_API_NINJAS_X_API_KEY;
         const textOnly = radioElements[0].checked ? true : false; // Check if user want text only response or HTML
         const url = `https://api.api-ninjas.com/v1/webscraper?url=${urlElement}&text_only=${textOnly}`;
+
+         // API request using axios
         const res = await axios
           .get(url, {
             headers: { "X-Api-Key": apiKey },
@@ -139,7 +148,7 @@ function LandingPage() {
           <div className="auth text-center">
             {isAuthenticated && (
               <h1 className="greeting text-secondary text-[1rem] vvsm:text-[1.5rem] vsm:text-[1.7rem] md:text-[2.5rem] sm:text-[2rem] mb-[1rem]">
-                Radhe-Radhe, {user.name}!
+                Hello, {user.name}!
               </h1>
             )}
             {!isAuthenticated ? (
@@ -171,11 +180,12 @@ function LandingPage() {
             <div className="radioButtons my-2 w-[100%] flex justify-around items-center">
               <div className="textOnlyRadioButton flex justify-center">
                 <input
-                  className="mr-4 md:mr-8"
+                  className="mr-4 md:mr-8 cursor-pointer"
                   type="radio"
                   id="textOnly"
                   name="contentType"
                   value={"true"}
+                  onChange={() => setSelectedRadioButton("true")}
                 />
                 <label
                   className="text-primary text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
@@ -186,11 +196,12 @@ function LandingPage() {
               </div>
               <div className="htmlRadioButton flex justify-center">
                 <input
-                  className="mr-4 md:mr-8"
+                  className="mr-4 md:mr-8 cursor-pointer"
                   type="radio"
                   id="radioHtml"
                   name="contentType"
                   value={"false"}
+                  onChange={() => setSelectedRadioButton("true")}
                 />
                 <label
                   className="text-primary text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
@@ -210,7 +221,7 @@ function LandingPage() {
             {showModal && showModalComponent()}
           </div>
           <h3 className="text-secondary text-[1rem] vsm:text-[1.2rem] md:text-[2rem] sm:text-[1.5rem]">
-            Made with <span>&#x2764;</span> by Mister Mickey
+            Made with <span>&#x2764;</span> by Shubham Singodiya
           </h3>
         </div>
       </div>
