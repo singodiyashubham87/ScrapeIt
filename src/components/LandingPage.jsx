@@ -85,6 +85,19 @@ function LandingPage() {
       }
     }
   };
+ // Function to get the current time and determine the greeting
+const getGreeting = () => {
+  const currentHour = new Date().getHours();
+
+  if (currentHour >= 5 && currentHour < 12) {
+    return 'Good Morning';
+  } else if (currentHour >= 12 && currentHour < 18) {
+    return 'Good Afternoon';
+  } else {
+    return 'Good Evening';
+  }
+};
+
 
   // Modal and loader handling functions
   const closeModal = () => setShowModal(false);
@@ -141,7 +154,7 @@ function LandingPage() {
           <div className="auth text-center">
             {isAuthenticated && (
               <h1 className="greeting text-secondary text-[1rem] vvsm:text-[1.5rem] vsm:text-[1.7rem] md:text-[2.5rem] sm:text-[2rem] mb-[1rem]">
-                Hello, {user.name}!
+               {getGreeting()}, {user.name}!
               </h1>
             )}
             {!isAuthenticated ? (
