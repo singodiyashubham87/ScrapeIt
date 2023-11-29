@@ -32,12 +32,12 @@ function Homepage() {
 
     // Render the Homepage component
   return (
-    <div className="homepageContainer font-primary h-[100vh] w-[100%] bg-black flex flex-col items-center justify-evenly">
+    <div className="homepageContainer font-primary h-[100vh] w-[100%] bg-black flex flex-col items-center justify-evenly relative">
       <Link
         to={"https://github.com/singodiyashubham87/ScrapeIt"}
         className="absolute top-0 right-0 p-6"
       >
-        <img src={ghlogo} alt="small_github_logo" className="h-14"/>
+        <img src={ghlogo} alt="small_github_logo" className="h-10"/>
       </Link>
 
       {/* Display the scraped data */}

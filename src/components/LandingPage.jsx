@@ -150,13 +150,13 @@ const getGreeting = () => {
 
   return (
     <>
-      <div className="landingContainer bg-black w-[100%] h-[100vh] font-primary">
+      <div className="landingContainer bg-black w-[100%] h-[100vh] font-primary relative">
         <div className="content h-[100vh] flex flex-col justify-evenly items-center border-2 border-white-700">
           <Link
             to={"https://github.com/singodiyashubham87/ScrapeIt"}
             className="absolute top-0 right-0 p-6"
           >
-            <img src={ghlogo} alt="small_github_logo" className="max-h-14 ghlogo-vsm:h-[3rem] ghlogo-vvsm:h-[2.5rem]"/>
+            <img src={ghlogo} alt="small_github_logo" className="h-10 ghlogo-vsm:h-[2.5rem] ghlogo-vvsm:h-[2rem]"/>
           </Link>
           <div className="auth text-center">
             {isAuthenticated && (
@@ -183,7 +183,7 @@ const getGreeting = () => {
             )}
           </div>
 
-          <div className="inputBox h-[25%] md:h-[30%] w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[35%] flex flex-col items-center justify-between border-2 p-4 border-white">
+          <div className="inputBox h-[25%] md:h-[30%] w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[35%] 2xl:w-[30%] flex flex-col items-center justify-between border-2 p-4 border-white">
             <input
               id="url"
               className="border-none w-[100%] text-center text-[1rem] vsm:text-[1.3rem] md:text-[1.5rem] xl:text-[2rem] px-2 py-1"
