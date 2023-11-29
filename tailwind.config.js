@@ -13,6 +13,9 @@ export default {
       screens: {
         'vsm': '406px',
         'vvsm': '100px',
+        'ghlogo-smfirst': {'min': '100px', 'max': '515px'},
+        'ghlogo-vsm': {'min': '406px', 'max': '640px'},
+        'ghlogo-vvsm': {'min': '100px', 'max': '406px'}
       },
     },
     animation: {
