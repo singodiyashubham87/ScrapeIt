@@ -3,7 +3,7 @@ import DOMPurify from "dompurify";
 import { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link, useNavigate } from "react-router-dom";
-import Loader from "./Loader";
+import Loader from "../components/Loader";
 import logo from "../assets/images/scraperLogo.png";
 import ghlogo from "../assets/images/ghlogo.png";
 
