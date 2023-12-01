@@ -13,3 +13,30 @@
 body{
     width: 100%;
 }
+
+
+/* Targeting webkit-based browsers */
+*::-webkit-scrollbar {
+    width: 5px; /* width of the scrollbar */
+  }
+  
+  /* Handle */
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(0 252 237); /* color of the scrollbar handle */
+    border-radius: 5px; /* rounded corners */
+  }
+  
+  /* Track */
+  *::-webkit-scrollbar-track {
+    background-color: black; /* color of the scrollbar track */
+  }
+  
+  /* Handle on hover */
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: yellow; /* color of the scrollbar handle on hover */
+  }
+  
+  /* Track on hover */
+  *::-webkit-scrollbar-track:hover {
+    background-color: #ddd; /* color of the scrollbar track on hover */
+  }
