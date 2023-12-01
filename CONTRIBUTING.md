@@ -4,7 +4,7 @@ Thank you for taking the time to contribute to the project. Please take a moment
 
 ## Important point to keep in mind before starting ✅
 
-- If anything is missing or if you find something which need to be enhanced/fixed/modified in the project, please feel free to [create an issue.](https://github.com/singodiyashubham87/ScrapeIt/issues/new/choose)
+- If anything is missing or if you find something that needs to be enhanced/fixed/modified in the project, please feel free to [create an issue.](https://github.com/singodiyashubham87/ScrapeIt/issues/new/choose)
 - Ask to get the issue assigned to you before working on the issue & making a PR.
 - Don't create a PR until the issue is not assigned to you.
 - Mention the issue number in the PRs and describe all the changes that you have made briefly in the PR.
@@ -15,13 +15,13 @@ Thank you for taking the time to contribute to the project. Please take a moment
 
 Click on the "Fork" button.
 
-By forking the repository, you will have your own version of the repository under your GitHub username.
+By forking the repository, you will have your version of the repository under your GitHub username.
 
-Once you have forked your repository, go to your profile inside the repository section you will find your forked repository.
+Once you have forked your repository, go to your profile inside the repository section, and you will find your forked repository.
 
 ### Step 2: Clone the Forked Repository
 
-Once you locate your repository you need to clone it to your local machine.
+Once you locate your repository, you must clone it to your local machine.
 
 ```sh
 git clone https://github.com/YOUR-USERNAME/ScrapeIt.git
