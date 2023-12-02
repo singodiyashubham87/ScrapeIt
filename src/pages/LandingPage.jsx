@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Link, useNavigate } from "react-router-dom";
 import Loader from "../components/Loader";
 import logo from "../assets/images/scraperLogo.png";
-import { ThemeProvider, useTheme } from "./ThemeToggle";
+import { ThemeProvider, useTheme } from "../components/ThemeToggle";
 import ghlogopng from "../assets/images/github-logo.png";
 import ghlogo from "../assets/images/ghlogo.png";
 
