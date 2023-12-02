@@ -154,8 +154,8 @@ function LandingPage() {
   return (
     <ThemeProvider>
       <>
-        <div className={`landingContainer font-primary relative${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
-          <div className={`content h-[100vh] flex flex-col justify-evenly items-center border-2 border-white-700 ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+      <div className={`landingContainer font-primary relative ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+          <div className={`content h-[100vh] flex flex-col justify-evenly items-center border-2 border-white-700 ${isDarkMode ? 'bg-black text-white' : 'light-mode'}`}>
             {/* GitHub logo link */}
             <Link
               to={"https://github.com/singodiyashubham87/ScrapeIt"}
@@ -190,45 +190,45 @@ function LandingPage() {
 
             {/* Theme toggle button */}
             <button
-              id="theme-toggle"
-              data-tooltip-target="tooltip-toggle"
-              type="button"
-              className={`text-gray-500 inline-flex items-center justify-center dark:text-gray-400 hover:bg-gray-100 w-10 h-10 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 fixed top-0 left-0 m-4 ${isDarkMode ? 'dark' : ''}`}
-              onClick={toggleThemeMode}
-            >
-              {/* Dark mode icon */}
-              <svg
-                id="theme-toggle-dark-icon"
-                className={`w-4 h-4 ${isDarkMode ? '' : 'hidden'}`}
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 18 20"
-              >
-                <path d="M17.8 13.75a1 1 0 0 0-.859-.5A7.488 7.488 0 0 1 10.52 2a1 1 0 0 0 0-.969A1.035 1.035 0 0 0 9.687.5h-.113a9.5 9.5 0 1 0 8.222 14.247 1 1 0 0 0 .004-.997Z"></path>
-              </svg>
-              {/* Light mode icon */}
-              <svg
-                id="theme-toggle-light-icon"
-                className={`w-4 h-4 ${isDarkMode ? 'hidden' : ''}`}
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M10 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0-11a1 1 0 0 0 1-1V1a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1Zm0 12a1 1 0 0 0-1 1v2a1 1 0 1 0 2 0v-2a1 1 0 0 0-1-1ZM4.343 5.757a1 1 0 0 0 1.414-1.414L4.343 2.929a1 1 0 0 0-1.414 1.414l1.414 1.414Zm11.314 8.486a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM4 10a1 1 0 0 0-1-1H1a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1Zm15-1h-2a1 1 0 1 0 0 2h2a1 1 0 0 0 0-2ZM4.343 14.243l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414a1 1 0 0 0-1.414-1.414ZM14.95 6.05a1 1 0 0 0 .707-.293l1.414-1.414a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 .707 1.707Z"></path>
-              </svg>
-            </button>
+  id="theme-toggle"
+  data-tooltip-target="tooltip-toggle"
+  type="button"
+  className={`text-gray-500 inline-flex items-center justify-center dark:text-gray-400 bg-gray-100 w-10 h-10 dark:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 fixed top-0 left-0 m-4 ${isDarkMode ? 'dark' : ''}`}
+  onClick={toggleThemeMode}
+>
+  {/* Dark mode icon */}
+  <svg
+    id="theme-toggle-dark-icon"
+    className={`w-4 h-4 ${isDarkMode ? '' : 'hidden'}`}
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 18 20"
+  >
+    <path d="M17.8 13.75a1 1 0 0 0-.859-.5A7.488 7.488 0 0 1 10.52 2a1 1 0 0 0 0-.969A1.035 1.035 0 0 0 9.687.5h-.113a9.5 9.5 0 1 0 8.222 14.247 1 1 0 0 0 .004-.997Z"></path>
+  </svg>
+  {/* Light mode icon */}
+  <svg
+    id="theme-toggle-light-icon"
+    className={`w-4 h-4 ${isDarkMode ? 'hidden' : ''}`}
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+  >
+    <path d="M10 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0-11a1 1 0 0 0 1-1V1a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1Zm0 12a1 1 0 0 0-1 1v2a1 1 0 1 0 2 0v-2a1 1 0 0 0-1-1ZM4.343 5.757a1 1 0 0 0 1.414-1.414L4.343 2.929a1 1 0 0 0-1.414 1.414l1.414 1.414Zm11.314 8.486a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM4 10a1 1 0 0 0-1-1H1a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1Zm15-1h-2a1 1 0 1 0 0 2h2a1 1 0 0 0 0-2ZM4.343 14.243l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414a1 1 0 0 0-1.414-1.414ZM14.95 6.05a1 1 0 0 0 .707-.293l1.414-1.414a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 .707 1.707Z"></path>
+  </svg>
+</button>
+
 
             {/* Input box and Scrape button */}
             <div className={`inputBox h-[25%] md:h-[30%] w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[35%] 2xl:w-[30%] flex flex-col items-center justify-between border-2 p-4 ${isDarkMode ? 'border-white' : 'border-black'}`}>
-              {/* URL input field */}
-              <input
-                id="url"
-    className={`border-none w-full text-center text-[1rem] vsm:text-[1.3rem] md:text-[1.5rem] xl:text-[2rem] px-2 py-1 ${isDarkMode ? 'bg-white text-black placeholder-gray-600' : 'bg-gray-300 text-black placeholder-gray-600'}`}
-    type="text"
-    placeholder="Enter URL to Scrape"
-/>
+            <input
+              id="url"
+              className={`border-none w-full text-center text-[1rem] vsm:text-[1.3rem] md:text-[1.5rem] xl:text-[2rem] px-2 py-1 ${isDarkMode ? 'bg-white text-black placeholder-gray-600' : 'bg-white text-black placeholder-gray-600 '}`}
+              type="text"
+              placeholder="Enter URL to Scrape"
+            />
 
             <div className="radioButtons my-2 w-[100%] flex justify-around items-center">
               <div className="textOnlyRadioButton flex justify-center">
@@ -241,11 +241,12 @@ function LandingPage() {
                   onChange={() => setSelectedRadioButton("true")}
                 />
                 <label
-                  className="text-primary text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
-                  htmlFor="textOnly"
-                >
-                  Text Only
-                </label>
+  className={`${isDarkMode ? 'text-primary' : 'text-dark'} text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]`}
+  htmlFor="textOnly"
+>
+  Text Only
+</label>
+
               </div>
               <div className="htmlRadioButton flex justify-center">
                 <input
@@ -256,26 +257,28 @@ function LandingPage() {
                   value={"false"}
                   onChange={() => setSelectedRadioButton("true")}
                 />
-                <label
-                  className="text-primary text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
-                  htmlFor="radioHtml"
-                >
-                  HTML
-                </label>
+               <label
+  className={`${isDarkMode ? 'text-primary' : 'text-dark'} text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]`}
+  htmlFor="radioHtml"
+>
+  HTML
+</label>
+
               </div>
             </div>
             <button
               onClick={handleScrapeClick}
-              className={`bg-transparent text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem] text-primary px-16 hover:bg-primary hover:text-black border-2 border-primary ${isDarkMode ? 'text-white' : 'text-black'}`}
+              className={`bg-transparent text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]  px-16 hover:bg-primary hover:text-black border-2 border-primary ${isDarkMode ? 'text-white' : 'text-black'}`}
             >
               Scrape
             </button>
             {loader && showLoaderImage()}
             {showModal && showModalComponent()}
           </div>
-          <h3 className="text-secondary text-[1rem] vsm:text-[1.2rem] md:text-[2rem] sm:text-[1.5rem]">
-            Made with <span>&#x2764;</span> by Shubham Singodiya
-          </h3>
+          <h3 className={`text-[1rem] vsm:text-[1.2rem] md:text-[2rem] sm:text-[1.5rem] ${isDarkMode ? 'text-secondary' : 'text-black'}`}>
+  Made with {isDarkMode ? <span>&#x2764;</span> : <span style={{ color: 'red' }}>&#x2764;</span>} by Shubham Singodiya
+</h3>
+
         </div>
       </div>
     </>
