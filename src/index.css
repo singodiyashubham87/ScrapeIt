@@ -13,3 +13,17 @@
 body{
     width: 100%;
 }
+/* Light mode styles */
+.light-mode {
+    background-color: #c0dffc;  /*Adjust this color as needed  */
+    color: black;
+  }
+  
+  /* Dark mode styles */
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+  
+
+  
