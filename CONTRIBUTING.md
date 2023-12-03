@@ -7,7 +7,7 @@ Thank you for taking the time to contribute to the project. Please take a moment
 - If anything is missing or if you find something that needs to be enhanced/fixed/modified in the project, please feel free to [create an issue.](https://github.com/singodiyashubham87/ScrapeIt/issues/new/choose)
 - Ask to get the issue assigned to you before working on the issue & making a PR.
 - Don't create a PR until the issue is not assigned to you.
-- Mention the issue number in the PRs and describe all the changes that you have made briefly in the PR.
+- Mention the issue number in the PRs and describe all the changes that you have made briefly in the PR(if possible attach a screen recording showing the changes you made).
 
 ## How to Contribute? 🤔
 
