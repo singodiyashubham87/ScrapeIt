@@ -5,13 +5,13 @@
 
 ## Tech Stack
 
-- **React:**  Frontend framework for building user interfaces
-- **Auth0:**  Authentication and authorization management
-- **Axios:**  HTTP client for making API requests
-- **Tailwind:** For styling the components
-- **DOMPurify:** Library for sanitizing and preventing XSS vulnerabilities
-- **html2pdf.js:** Library for generating PDFs from HTML content
-- **API Ninjas:** Third-party API used for web scraping
+- **React:**  Frontend framework for building user interfaces.
+- **Auth0:**  Authentication and authorization management.
+- **Axios:**  HTTP client for making API requests.
+- **Tailwind:** For styling the components.
+- **DOMPurify:** Library for sanitizing and preventing XSS vulnerabilities.
+- **html2pdf.js:** Library for generating PDFs from HTML content.
+- **API Ninjas:** Third-party API used for web scraping.
 
 ## Getting Started
 
@@ -31,14 +31,14 @@ cd ScrapeIt
 ```bash
 npm install
 ```
-3. Edit the .env file like this and add your Auth0 Credentials and API Ninjas API key in the place holders
+3. Edit the .env file like this and add your Auth0 Credentials and API Ninjas API key in the place holders:
 ```bash
 VITE_AUTH0_DOMAIN="AUTH0_DOMAIN"
 VITE_AUTH0_CLIENT_ID="AUTH0_CLIENT_ID"
 VITE_AUTH0_REDIRECT_URL="http://localhost:5173"
 VITE_API_NINJAS_X_API_KEY="API_NINJAS_X_API_KEY"
 ```
-4. Start the app
+4. Start the app:
 ```bash
 npm run dev
   ```
