@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         primary: '#00FCED',
-        secondary: '#92EEE8',
+        secondary: '#92EEE8'  
       },
       fontFamily: {
         primary: 'IBM Plex Mono',
