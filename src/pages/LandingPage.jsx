@@ -235,7 +235,7 @@ const getGreeting = () => {
             {showModal && showModalComponent()}
           </div>
           <h3 className="text-secondary text-[1rem] vsm:text-[1.2rem] md:text-[2rem] sm:text-[1.5rem]">
-            Made with <span>&#x2764;</span> by Shubham Singodiya
+            Made with <span className="text-rose-600">&#x2764;</span> by Shubham Singodiya
           </h3>
         </div>
       </div>
