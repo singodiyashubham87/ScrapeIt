@@ -36,6 +36,7 @@ function Homepage() {
       <Link
         to={"https://github.com/singodiyashubham87/ScrapeIt"}
         className="absolute top-0 right-0 p-6"
+        target="_blank"  // open link in a new tab
       >
         <img src={ghlogo} alt="small_github_logo" className="h-10"/>
       </Link>
