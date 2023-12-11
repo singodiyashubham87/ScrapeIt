@@ -120,7 +120,7 @@ function LandingPage() {
           </p>
           <button
             onClick={closeModal}
-            className="close md:text-[1.5rem] text-white border border-primary hover:bg-primary hover:text-black px-[1rem] py-[.5rem] xl:px-[3rem] xl:py-[1rem]"
+            className="close md:text-[1.4rem] text-white border border-primary hover:bg-primary hover:text-black px-[0.5rem] py-[0.25rem] xl:px-[2rem] xl:py-[0.5rem]"
           >
             Close
           </button>
