@@ -41,6 +41,12 @@ body{
     background-color: #ddd; /* color of the scrollbar track on hover */
   }
 
+.text-secondary {
+  --tw-text-opacity: 1;
+  color: rgb(146 238 232 / var(--tw-text-opacity));
+  text-align: center;
+}
+
 ::-moz-selection {
   /* Code for Firefox */
   color: white;
