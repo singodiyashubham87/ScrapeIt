@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Loader from "../components/Loader";
 import logo from "../assets/images/scraperLogo.png";
 import ghlogo from "../assets/images/ghlogo.png";
-
+import ghlogo_white from "../assets/images/ghlogo_white.png";
 // LandingPage component for handling scraping and authentication
 function LandingPage() {
   // Auth0 Hooks
@@ -163,7 +163,11 @@ function LandingPage() {
             className="absolute top-0 right-0 p-6"
             target="_blank"  // open link in a new tab
           >
-            <img src={ghlogo} alt="small_github_logo" className="h-10 ghlogo-vsm:h-[2.5rem] ghlogo-vvsm:h-[2rem]" />
+            <img src={darkMode?ghlogo:ghlogo_white} alt="small_github_logo" className={`h-10 w-auto ${
+      darkMode
+        ? 'ghlogo-vsm:h-[2.5rem] ghlogo-vvsm:h-[2rem]'
+        : 'ghlogo_white-vsm:h-[2.5rem] ghlogo_white-vvsm:h-[2rem]'
+    }`} />
           </Link>
           <div className="auth text-center">
             {isAuthenticated && (

@@ -40,43 +40,13 @@ body{
   *::-webkit-scrollbar-track:hover {
     background-color: #ddd; /* color of the scrollbar track on hover */
   }
-<<<<<<< Updated upstream
-  .dark {
-    @apply bg-black text-white;
+  ::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: #d6fffe;
   }
   
-  .light {
-    @apply bg-white text-black;
+  ::selection {
+    color: rgb(0, 0, 0);
+    background: #d6fffe;
   }
-  .border-white
-  {
-    color: #ddd;
-    border-color: #ddd;
-  }
-  .border-black
-  {
-    color: black;
-    border-color: black;
-  }
-  .border-w
-  {
-    border-color: #ddd;
-    color: black;
-  }
-  .border-b
-  {
-    border-color: black;
-    color: black;
-  }
-  .border-loginwhite
-  {
-    border-color: #ddd;
-  }
-  .border-loginblack
-  {
-    border-color: black;
-  }
-
-
-=======
->>>>>>> Stashed changes
