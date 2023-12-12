@@ -43,7 +43,7 @@ body{
 
 .text-secondary {
   --tw-text-opacity: 1;
-  color: rgb(146 238 232 / var(--tw-text-opacity));
+  color: rgb(146 238 232);
   text-align: center;
 }
 
