@@ -111,11 +111,11 @@ function LandingPage() {
           onClick={closeModal}
           className="wrapper top-[0] bottom-[0] right-[0] left-[0] bg-[#272829] fixed opacity-[90%]"
         ></div>
-        <div className="modalContainer w-[90%] vsm:w-[75%] sm:w-[60%] md:w-[auto] fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-black border-2 border-primary flex flex-col justify-center items-center px-[1rem] py-[1rem] md:px-[4rem] md:py-[2rem] xl:px-[5rem] xl:py-[3rem]">
+        <div className="modalContainer w-[90%] vsm:w-[75%] sm:w-[60%] md:w-[auto] max-w-[43rem] fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-black border-2 border-primary flex flex-col justify-center items-center px-[1rem] py-[1rem] md:px-[4rem] md:py-[2rem] xl:px-[5rem] xl:py-[3rem]">
           <h1 className="text-white text-[1.3rem] md:text-[1.7rem] xl:text-[2rem] text-yellow-500">
             {alert || "Alert!"}
           </h1>
-          <p className="text-white text-center m-[1rem] md:m-[1.5rem] xl:m-[2rem] text-[1.3rem] xl:text-[2rem] md:text-[1.7rem]">
+          <p className="text-white text-center m-[1rem] md:m-[1.5rem] xl:m-[2rem] text-[1.2rem] xl:text-[1.7rem] md:text-[1.4rem]">
             {alertError}
           </p>
           <button
