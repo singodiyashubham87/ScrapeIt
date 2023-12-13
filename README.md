@@ -54,7 +54,15 @@ npm run dev
 API Ninjas (https://api.api-ninjas.com/): For providing the web scraping API.
 
 ## Author
-* <a href="https://shubham-s-socials.vercel.app/"><i>Shubham Singodiya</i></a> 
+* <a href="https://shubham-s-socials.vercel.app/"><i>Shubham Singodiya</i></a>
+
+## Contributors
+
+<div>
+   <a href="https://github.com/singodiyashubham87/ScrapeIt/graphs/contributors">
+   <img src="https://contrib.rocks/image?repo=singodiyashubham87/ScrapeIt"/>
+   </a>
+</div>
 
 ## License
 This project is licensed under the MIT License.
