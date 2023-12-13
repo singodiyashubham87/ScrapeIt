@@ -171,7 +171,7 @@ function LandingPage() {
           </Link>
           <div className="auth text-center">
             {isAuthenticated && (
-              <h1 className="greeting text-secondary text-[1rem] vvsm:text-[1.5rem] vsm:text-[1.7rem] md:text-[2.5rem] sm:text-[2rem] mb-[1rem]">
+              <h1 className="greeting text-[#92eee8] text-center text-[1rem] vvsm:text-[1.5rem] vsm:text-[1.7rem] md:text-[2.5rem] sm:text-[2rem] mb-[1rem]">
                 {getGreeting()}, {user.name}!
               </h1>
             )}
@@ -244,7 +244,7 @@ function LandingPage() {
             {loader && showLoaderImage()}
             {showModal && showModalComponent()}
           </div>
-          <h3 className={`text-[1rem] vsm:text-[1.2rem] md:text-[2rem] sm:text-[1.5rem] ${darkMode ? 'text-secondary' : 'text-black'}`}>
+          <h3 className={`text-[1rem] vsm:text-[1.2rem] md:text-[2rem] sm:text-[1.5rem] ${darkMode ? 'text-[#92eee8] text-center' : 'text-black'}`}>
             Made with <span className="text-rose-600">&#x2764;</span> by Shubham Singodiya
           </h3>
         </div>
