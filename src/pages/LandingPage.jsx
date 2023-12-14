@@ -200,6 +200,11 @@ function LandingPage() {
               className="border-none w-[100%] text-center text-[1rem] vsm:text-[1.3rem] md:text-[1.5rem] xl:text-[2rem] px-2 py-1 text-black"
               type="text"
               placeholder="Enter URL to Scrape"
+              onKeyDown={(E)=>{
+                if(E.key === "Enter"){
+                  handleScrapeClick();
+                }
+              }}
             />
             <div className="radioButtons my-2 w-[100%] flex justify-around items-center">
               <div className="textOnlyRadioButton flex justify-center">
