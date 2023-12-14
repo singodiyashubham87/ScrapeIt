@@ -91,14 +91,13 @@ function LandingPage() {
     const currentHour = new Date().getHours();
 
     if (currentHour >= 5 && currentHour < 12) {
-      return 'Good Morning';
+      return "Good Morning";
     } else if (currentHour >= 12 && currentHour < 18) {
-      return 'Good Afternoon';
+      return "Good Afternoon";
     } else {
-      return 'Good Evening';
+      return "Good Evening";
     }
   };
-
 
   // Modal and loader handling functions
   const closeModal = () => setShowModal(false);
@@ -112,7 +111,7 @@ function LandingPage() {
           className="wrapper top-[0] bottom-[0] right-[0] left-[0] bg-[#272829] fixed opacity-[90%]"
         ></div>
         <div className="modalContainer w-[90%] vsm:w-[75%] sm:w-[60%] md:w-[auto] max-w-[43rem] fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-black border-2 border-primary flex flex-col justify-center items-center px-[1rem] py-[1rem] md:px-[4rem] md:py-[2rem] xl:px-[5rem] xl:py-[3rem]">
-          <h1 className="text-white text-[1.3rem] md:text-[1.7rem] xl:text-[2rem] text-yellow-500">
+          <h1 className="text-[1.3rem] md:text-[1.7rem] xl:text-[2rem] text-yellow-500">
             {alert || "Alert!"}
           </h1>
           <p className="text-white text-center m-[1rem] md:m-[1.5rem] xl:m-[2rem] text-[1.2rem] xl:text-[1.7rem] md:text-[1.4rem]">
@@ -150,24 +149,36 @@ function LandingPage() {
 
   return (
     <>
-      <div className={`landingContainer ${darkMode ? 'bg-black text-white' : 'bg-white text-black'} bg-black w-[100%] h-[100vh] font-primary relative`}>
+      <div
+        className={`landingContainer ${
+          darkMode ? "bg-black text-white" : "bg-white text-black"
+        } bg-black w-[100%] h-[100vh] font-primary relative`}
+      >
         <div className="content h-[100vh] flex flex-col justify-evenly items-center border-2 border-white-700">
           <button
-              onClick={() => setDarkMode(!darkMode)}
-              className={`toggleButton bg-transparent px-4 py-2 border-2 fixed top-0 left-0 m-4 ${darkMode ? 'text-white border-white' : 'text-black border-black'}`}
-            >
-              {darkMode ? 'Light Mode' : 'Dark Mode'}
-            </button>
+            onClick={() => setDarkMode(!darkMode)}
+            className={`toggleButton bg-transparent px-4 py-2 hover:bg-white  hover:text-black border-2 fixed top-0 left-0 m-4 ${
+              darkMode
+                ? "text-white border-white"
+                : "text-black border-black hover:bg-black  hover:text-white"
+            }`}
+          >
+            {darkMode ? "Light Mode" : "Dark Mode"}
+          </button>
           <Link
             to={"https://github.com/singodiyashubham87/ScrapeIt"}
             className="absolute top-0 right-0 p-6"
-            target="_blank"  // open link in a new tab
+            target="_blank" // open link in a new tab
           >
-            <img src={darkMode?ghlogo:ghlogo_white} alt="small_github_logo" className={`h-10 w-auto ${
-      darkMode
-        ? 'ghlogo-vsm:h-[2.5rem] ghlogo-vvsm:h-[2rem]'
-        : 'ghlogo_white-vsm:h-[2.5rem] ghlogo_white-vvsm:h-[2rem]'
-    }`} />
+            <img
+              src={darkMode ? ghlogo : ghlogo_white}
+              alt="small_github_logo"
+              className={`h-10 w-auto ${
+                darkMode
+                  ? "ghlogo-vsm:h-[2.5rem] ghlogo-vvsm:h-[2rem]"
+                  : "ghlogo_white-vsm:h-[2.5rem] ghlogo_white-vvsm:h-[2rem]"
+              }`}
+            />
           </Link>
           <div className="auth text-center">
             {isAuthenticated && (
@@ -177,14 +188,18 @@ function LandingPage() {
             )}
             {!isAuthenticated ? (
               <button
-                className={`bg-black text-white text-[1.5rem] sm:text-[2rem] px-[2rem] sm:px-[4rem] hover:bg-white hover:text-black border-2 ${darkMode ? 'border-white' : 'border-black'}`}
+                className={`bg-black text-white text-[1.5rem] sm:text-[2rem] px-[2rem] sm:px-[4rem] hover:bg-white hover:text-black border-2 ${
+                  darkMode ? "border-white" : "border-black"
+                }`}
                 onClick={() => loginWithRedirect()}
               >
                 Log In
               </button>
             ) : (
               <button
-                className={`bg-black text-white text-[1.5rem] sm:text-[2rem] px-[2rem] sm:px-[4rem] hover:bg-white hover:text-black border-2 border-white-700 ${darkMode ? 'border-white' : 'border-black'}`}
+                className={`bg-black text-white text-[1.5rem] sm:text-[2rem] px-[2rem] sm:px-[4rem] hover:bg-white hover:text-black border-2 border-white-700 ${
+                  darkMode ? "border-white" : "border-black"
+                }`}
                 onClick={() =>
                   logout({ logoutParams: { returnTo: window.location.origin } })
                 }
@@ -194,7 +209,11 @@ function LandingPage() {
             )}
           </div>
 
-          <div className={`inputBox h-[25%] md:h-[30%] w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[35%] 2xl:w-[30%] flex flex-col items-center justify-between border-2 p-4 ${darkMode ? 'bg-black border-white' : 'border-black bg-black'}`}>
+          <div
+            className={`inputBox h-[25%] md:h-[30%] w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[35%] 2xl:w-[30%] flex flex-col items-center justify-between border-2 p-4 ${
+              darkMode ? "bg-black border-white" : "border-black bg-black"
+            }`}
+          >
             <input
               id="url"
               className="border-none w-[100%] text-center text-[1rem] vsm:text-[1.3rem] md:text-[1.5rem] xl:text-[2rem] px-2 py-1 text-black"
@@ -244,8 +263,13 @@ function LandingPage() {
             {loader && showLoaderImage()}
             {showModal && showModalComponent()}
           </div>
-          <h3 className={`text-[1rem] vsm:text-[1.2rem] md:text-[2rem] sm:text-[1.5rem] ${darkMode ? 'text-secondary' : 'text-black'}`}>
-            Made with <span className="text-rose-600">&#x2764;</span> by Shubham Singodiya
+          <h3
+            className={`text-[1rem] vsm:text-[1.2rem] md:text-[2rem] sm:text-[1.5rem] ${
+              darkMode ? "text-secondary" : "text-black"
+            }`}
+          >
+            Made with <span className="text-rose-600">&#x2764;</span> by Shubham
+            Singodiya
           </h3>
         </div>
       </div>
