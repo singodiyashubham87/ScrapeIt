@@ -151,16 +151,16 @@ function LandingPage() {
     <>
       <div
         className={`landingContainer ${
-          darkMode ? "bg-black text-white" : "bg-white text-black"
+          darkMode ? "bg-pri text-sec" : "bg-sec text-void"
         } bg-black w-[100%] h-[100vh] font-primary relative`}
       >
         <div className="content h-[100vh] flex flex-col justify-evenly items-center border-2 border-white-700">
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className={`toggleButton bg-transparent px-4 py-2 hover:bg-white  hover:text-black border-2 fixed top-0 left-0 m-4 ${
+            className={`toggleButton bg-darkb px-4 py-2 hover:bg-white  hover:text-black border-skyblue border-2 fixed top-0 left-0 m-4 ${
               darkMode
-                ? "text-white border-white"
-                : "text-black border-black hover:bg-black  hover:text-white"
+                ? "text-white border-skyblue"
+                : "text-sec border-pri hover:bg-[#1D3557]  hover:text-sec"
             }`}
           >
             {darkMode ? "Light Mode" : "Dark Mode"}
@@ -171,7 +171,7 @@ function LandingPage() {
             target="_blank" // open link in a new tab
           >
             <img
-              src={darkMode ? ghlogo : ghlogo_white}
+              src={darkMode ? ghlogo_white : ghlogo}
               alt="small_github_logo"
               className={`h-10 w-auto ${
                 darkMode
@@ -182,14 +182,14 @@ function LandingPage() {
           </Link>
           <div className="auth text-center">
             {isAuthenticated && (
-              <h1 className="greeting text-secondary text-[1rem] vvsm:text-[1.5rem] vsm:text-[1.7rem] md:text-[2.5rem] sm:text-[2rem] mb-[1rem]">
+              <h1 className="greeting text-sec text-[1rem] vvsm:text-[1.5rem] vsm:text-[1.7rem] md:text-[2.5rem] sm:text-[2rem] mb-[1rem]">
                 {getGreeting()}, {user.name}!
               </h1>
             )}
             {!isAuthenticated ? (
               <button
-                className={`bg-black text-white text-[1.5rem] sm:text-[2rem] px-[2rem] sm:px-[4rem] hover:bg-white hover:text-black border-2 ${
-                  darkMode ? "border-white" : "border-black"
+                className={`bg-darkb border-skyblue text-white text-[1.5rem] sm:text-[2rem] px-[2rem] sm:px-[4rem] hover:bg-white hover:text-black border-2 ${
+                  darkMode ? "border-skyblue" : "border-black"
                 }`}
                 onClick={() => loginWithRedirect()}
               >
@@ -197,8 +197,8 @@ function LandingPage() {
               </button>
             ) : (
               <button
-                className={`bg-black text-white text-[1.5rem] sm:text-[2rem] px-[2rem] sm:px-[4rem] hover:bg-white hover:text-black border-2 border-white-700 ${
-                  darkMode ? "border-white" : "border-black"
+                className={`bg-darkb border-skyblue text-white text-[1.5rem] sm:text-[2rem] px-[2rem] sm:px-[4rem] hover:bg-white hover:text-black border-2 border-white-700 ${
+                  darkMode ? "border-skyblue" : "border-black"
                 }`}
                 onClick={() =>
                   logout({ logoutParams: { returnTo: window.location.origin } })
@@ -211,7 +211,7 @@ function LandingPage() {
 
           <div
             className={`inputBox h-[25%] md:h-[30%] w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[35%] 2xl:w-[30%] flex flex-col items-center justify-between border-2 p-4 ${
-              darkMode ? "bg-black border-white" : "border-black bg-black"
+              darkMode ? "bg-darkb border-white" : "border-skyblue bg-darkb"
             }`}
           >
             <input
@@ -231,7 +231,7 @@ function LandingPage() {
                   onChange={() => setSelectedRadioButton("true")}
                 />
                 <label
-                  className="text-primary text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
+                  className="text-void text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
                   htmlFor="textOnly"
                 >
                   Text Only
@@ -247,7 +247,7 @@ function LandingPage() {
                   onChange={() => setSelectedRadioButton("true")}
                 />
                 <label
-                  className="text-primary text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
+                  className="text-void text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
                   htmlFor="radioHtml"
                 >
                   HTML
@@ -256,7 +256,7 @@ function LandingPage() {
             </div>
             <button
               onClick={handleScrapeClick}
-              className="bg-transparent text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem] text-primary px-16 hover:bg-primary hover:text-black border-2 border-primary"
+              className="bg-transparent text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem] text-sec px-16 hover:bg-sec hover:text-black border-2 border-primary"
             >
               Scrape
             </button>
@@ -265,7 +265,7 @@ function LandingPage() {
           </div>
           <h3
             className={`text-[1rem] vsm:text-[1.2rem] md:text-[2rem] sm:text-[1.5rem] ${
-              darkMode ? "text-secondary" : "text-black"
+              darkMode ? "text-sec" : "text-void b"
             }`}
           >
             Made with <span className="text-rose-600">&#x2764;</span> by Shubham
