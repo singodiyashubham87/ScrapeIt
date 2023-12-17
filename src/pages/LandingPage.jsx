@@ -108,18 +108,18 @@ function LandingPage() {
       <>
         <div
           onClick={closeModal}
-          className="wrapper top-[0] bottom-[0] right-[0] left-[0] bg-[#272829] fixed opacity-[90%]"
+          className="wrapper top-[0] bottom-[0] right-[0] left-[0] bg-void fixed opacity-[80%] blur-lg"
         ></div>
-        <div className="modalContainer w-[90%] vsm:w-[75%] sm:w-[60%] md:w-[auto] max-w-[43rem] fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-black border-2 border-primary flex flex-col justify-center items-center px-[1rem] py-[1rem] md:px-[4rem] md:py-[2rem] xl:px-[5rem] xl:py-[3rem]">
-          <h1 className="text-[1.3rem] md:text-[1.7rem] xl:text-[2rem] text-yellow-500">
+        <div className="modalContainer w-[90%] vsm:w-[75%] sm:w-[60%] md:w-[auto] max-w-[43rem] fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-red border-2 border-primary flex flex-col justify-center items-center px-[1rem] py-[1rem] md:px-[4rem] md:py-[2rem] xl:px-[5rem] xl:py-[3rem]">
+          <h1 className="text-[1.3rem] md:text-[1.7rem] xl:text-[2rem] text-skyblue font-bold">
             {alert || "Alert!"}
           </h1>
-          <p className="text-white text-center m-[1rem] md:m-[1.5rem] xl:m-[2rem] text-[1.2rem] xl:text-[1.7rem] md:text-[1.4rem]">
+          <p className="text-void font-normal text-center m-[1rem] md:m-[1.5rem] xl:m-[2rem] text-[1.2rem] xl:text-[1.7rem] md:text-[1.4rem]">
             {alertError}
           </p>
           <button
             onClick={closeModal}
-            className="close md:text-[1.4rem] text-white border border-primary hover:bg-primary hover:text-black px-[0.5rem] py-[0.25rem] xl:px-[2rem] xl:py-[0.5rem]"
+            className="close md:text-[1.4rem] text-white border border-primary hover:bg-primary hover:text-darkb hover:bg-sec px-[0.5rem] py-[0.25rem] xl:px-[2rem] xl:py-[0.5rem]"
           >
             Close
           </button>
@@ -151,16 +151,16 @@ function LandingPage() {
     <>
       <div
         className={`landingContainer ${
-          darkMode ? "bg-pri text-sec" : "bg-sec text-void"
+          darkMode ? "bg-pri text-sec" : "bg-skyblue text-void"
         } bg-black w-[100%] h-[100vh] font-primary relative`}
       >
         <div className="content h-[100vh] flex flex-col justify-evenly items-center border-2 border-white-700">
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className={`toggleButton bg-darkb px-4 py-2 hover:bg-white  hover:text-black border-skyblue border-2 fixed top-0 left-0 m-4 ${
+            className={`toggleButton bg-darkb px-4 py-2 hover:bg-white  hover:text-void border-skyblue border-2 fixed top-0 left-0 m-4 ${
               darkMode
-                ? "text-white border-skyblue"
-                : "text-sec border-pri hover:bg-[#1D3557]  hover:text-sec"
+                ? "text-white border-skyblue "
+                : "text-sec border-pri hover:bg-[#1D3557]  hover:text-void"
             }`}
           >
             {darkMode ? "Light Mode" : "Dark Mode"}
