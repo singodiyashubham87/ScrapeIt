@@ -23,7 +23,7 @@
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/MisterMickey/ScrapeIt.git
+git clone https://github.com/singodiyashubham87/ScrapeIt.git
 cd ScrapeIt
 ```
    
@@ -31,7 +31,7 @@ cd ScrapeIt
 ```bash
 npm install
 ```
-3. Edit the .env file like this and add your Auth0 Credentials and API Ninjas API key in the place holders:
+3. Edit the .env file like this and add your Auth0 Credentials and API Ninjas API key in the placeholders:
 ```bash
 VITE_AUTH0_DOMAIN="AUTH0_DOMAIN"
 VITE_AUTH0_CLIENT_ID="AUTH0_CLIENT_ID"
