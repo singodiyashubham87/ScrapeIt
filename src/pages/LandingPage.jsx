@@ -149,7 +149,7 @@ function LandingPage() {
 
   return (
     <>
-      <div
+      <divs
         className={`landingContainer ${
           darkMode ? "bg-pri text-sec" : "bg-skyblue text-void"
         } bg-black w-[100%] h-[100vh] font-primary relative`}
@@ -219,8 +219,8 @@ function LandingPage() {
               className="border-none w-[100%] text-center text-[1rem] vsm:text-[1.3rem] md:text-[1.5rem] xl:text-[2rem] px-2 py-1 text-black"
               type="text"
               placeholder="Enter URL to Scrape"
-              onKeyDown={(E)=>{
-                if(E.key === "Enter"){
+              onKeyDown={(E) => {
+                if (E.key === "Enter") {
                   handleScrapeClick();
                 }
               }}
