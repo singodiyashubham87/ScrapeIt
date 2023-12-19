@@ -149,7 +149,7 @@ function LandingPage() {
 
   return (
     <>
-      <divs
+      <div
         className={`landingContainer ${
           darkMode ? "bg-pri text-sec" : "bg-skyblue text-void"
         } bg-black w-[100%] h-[100vh] font-primary relative`}
