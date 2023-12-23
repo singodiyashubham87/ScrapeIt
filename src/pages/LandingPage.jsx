@@ -7,6 +7,7 @@ import Loader from "../components/Loader";
 import logo from "../assets/images/scraperLogo.png";
 import ghlogo from "../assets/images/ghlogo.png";
 import ghlogo_white from "../assets/images/ghlogo_white.png";
+import { FaCircle, FaMoon } from 'react-icons/fa';
 // LandingPage component for handling scraping and authentication
 function LandingPage() {
   // Auth0 Hooks
@@ -98,6 +99,7 @@ function LandingPage() {
       return "Good Evening";
     }
   };
+ 
 
   // Modal and loader handling functions
   const closeModal = () => setShowModal(false);
@@ -142,6 +144,10 @@ function LandingPage() {
     );
   };
 
+  //new component introduction
+  
+  
+  
   // Returns Loader component if authentication is in progress
   if (isLoading) {
     return <Loader />;
@@ -155,21 +161,48 @@ function LandingPage() {
         } bg-black w-[100%] h-[100vh] font-primary relative`}
       >
         <div className="content h-[100vh] flex flex-col justify-evenly items-center border-2 border-white-700">
+          
+          {/* toggle button - light-dark theme */}
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className={`toggleButton bg-darkb px-4 py-2 hover:bg-white  hover:text-void border-skyblue border-2 fixed top-0 left-0 m-4 ${
+            className={`toggleButton rounded-full bg-darkb px-4 py-2 hover:bg-white hover:text-void border-skyblue border-2 fixed top-0 left-0 m-4 flex items-center ${
               darkMode
-                ? "text-white border-skyblue "
-                : "text-sec border-pri hover:bg-[#1D3557]  hover:text-void"
+                ? 'dark-mode'
+                : 'light-mode text-sec border-pri hover:bg-[#1D3557] hover:text-void'
             }`}
           >
-            {darkMode ? "Light Mode" : "Dark Mode"}
+            <div className="flex items-center">
+              <FaCircle
+                size={darkMode ? 20 : 24}
+                className={`mr-2 transition ${
+                  darkMode
+                    ? 'opacity-80 filter brightness-90'
+                    : 'opacity-100 text-sec'
+                }`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setDarkMode(false);
+                }}
+              />
+              <FaMoon
+                size={darkMode ? 24 : 20}
+                className={`ml-2 transition ${
+                  darkMode ? 'opacity-100 text-void' : 'opacity-80'
+                }`}
+                onClick={(e) => {
+                  e.stopPropagation(); 
+                  setDarkMode(true);
+                }}
+              />
+            </div>
           </button>
+        
           <Link
             to={"https://github.com/singodiyashubham87/ScrapeIt"}
             className="absolute top-0 right-0 p-6"
             target="_blank" // open link in a new tab
           >
+
             <img
               src={darkMode ? ghlogo_white : ghlogo}
               alt="small_github_logo"
@@ -282,4 +315,6 @@ function LandingPage() {
   );
 }
 
+
 export default LandingPage;
+
