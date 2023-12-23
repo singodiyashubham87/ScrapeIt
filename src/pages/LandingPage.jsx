@@ -216,7 +216,7 @@ function LandingPage() {
           >
             <input
               id="url"
-              className="border-none w-[100%] text-center text-[1rem] vsm:text-[1.3rem] md:text-[1.5rem] xl:text-[2rem] px-2 py-1 text-black"
+              className="border-none w-[100%] text-center text-[1rem] vsm:text-[1.3rem] md:text-[1.5rem] xl:text-[2rem] px-2 py-1 text-black selection:bg-pri selection:text-sec"
               type="text"
               placeholder="Enter URL to Scrape"
               onKeyDown={(E) => {
