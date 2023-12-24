@@ -7,6 +7,8 @@ import Loader from "../components/Loader";
 import logo from "../assets/images/scraperLogo.png";
 import ghlogo from "../assets/images/ghlogo.png";
 import ghlogo_white from "../assets/images/ghlogo_white.png";
+import data from "../assets/images/data.png";
+import search from "../assets/images/search.png";
 // LandingPage component for handling scraping and authentication
 function LandingPage() {
   // Auth0 Hooks
@@ -214,17 +216,22 @@ function LandingPage() {
               darkMode ? "bg-darkb border-white" : "border-skyblue bg-darkb"
             }`}
           >
-            <input
-              id="url"
-              className="border-none w-[100%] text-center text-[1rem] vsm:text-[1.3rem] md:text-[1.5rem] xl:text-[2rem] px-2 py-1 text-black selection:bg-pri selection:text-sec"
-              type="text"
-              placeholder="Enter URL to Scrape"
-              onKeyDown={(E) => {
-                if (E.key === "Enter") {
-                  handleScrapeClick();
-                }
-              }}
-            />
+            <div className=" bg-cover w-[100%] items-center relative">
+              <input
+                id="url"
+                className="border-none w-[100%] rounded-full text-center text-[1rem] vsm:text-[1.3rem] md:text-[1.5rem] xl:text-[2rem] px-2 py-1 text-black shadow-3xl"
+                type="text"
+                placeholder="Enter URL to Scrape"
+                onKeyDown={(E) => {
+                  if (E.key === "Enter") {
+                    handleScrapeClick();
+                  }
+                }}
+              />
+              <div className=" h-[110%] w-[10%] rounded-full absolute right-0 top-1/2 flex justify-center items-center -translate-y-1/2 bg-pri shadow-3xl ">
+                <img src={search} className="search  h-5 w-auto " />
+              </div>
+            </div>
             <div className="radioButtons my-2 w-[100%] flex justify-around items-center">
               <div className="textOnlyRadioButton flex justify-center">
                 <input
@@ -259,12 +266,15 @@ function LandingPage() {
                 </label>
               </div>
             </div>
-            <button
-              onClick={handleScrapeClick}
-              className="bg-transparent text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem] text-sec px-16 hover:bg-sec hover:text-black border-2 border-primary"
-            >
-              Scrape
-            </button>
+            <div className="flex justify-between">
+              <button
+                onClick={handleScrapeClick}
+                className="scrape bg-transparent items-center text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem] flex justify-between text-sec px-16 hover:bg-pri border-2 border-primary hover:border-skyblue"
+              >
+                Scrape
+                <img src={data} className={`h-7 w-auto }`} />
+              </button>
+            </div>
             {loader && showLoaderImage()}
             {showModal && showModalComponent()}
           </div>
