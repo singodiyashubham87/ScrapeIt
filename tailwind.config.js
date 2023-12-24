@@ -11,6 +11,9 @@ export default {
         darkb: "#457B9D",
         void: "#252525",
       },
+      boxShadow: {
+        "3xl": "0px 0px 27.899999618530273px 6px rgba(0, 0, 0, 0.25)",
+      },
       fontFamily: {
         primary: "IBM Plex Mono",
       },
