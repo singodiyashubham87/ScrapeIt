@@ -228,7 +228,7 @@ function LandingPage() {
                   }
                 }}
               />
-              <div className=" h-[110%] w-[10%] rounded-full absolute right-0 top-1/2 flex justify-center items-center -translate-y-1/2 bg-pri shadow-3xl ">
+              <div className=" h-[110%] w-[10%] rounded-full absolute right-0 top-1/2 flex justify-center items-center -translate-y-1/2 shadow-3xl selection:bg-pri selection:text-sec ">
                 <img src={search} className="search  h-5 w-auto " />
               </div>
             </div>
