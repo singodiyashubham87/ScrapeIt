@@ -43,9 +43,9 @@ function Homepage() {
 
       {/* Display the scraped data */}
       <span className="bg-white text-[2rem] px-[2rem]">Scrapped Data:</span>
-      <p className="scrapedData bg-primary max-w-[90%] vsm:w-[80%] max-h-[70%] overflow-y-auto text-white md:text-[1.5rem] xl:text-[2rem] vvsm:text-[1rem] py-[1rem] px-[4rem] vvsm:px-[2rem] border-4 border-white">
+      <p className="scrapedData bg-primary max-w-[90%] vsm:w-[80%] max-h-[70%] overflow-y-auto md:text-[1.5rem] xl:text-[2rem] vvsm:text-[1rem] py-[1rem] px-[4rem] vvsm:px-[2rem] border-4 border-white">
         {" "}
-        <code>{fetchedData}</code>
+        <code className="text-white">{fetchedData}</code>
       </p>
 
        {/* Buttons for Download and ReScrape actions */}
