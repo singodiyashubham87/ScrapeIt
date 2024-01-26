@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "axios": "^1.6.2",
     "dompurify": "^3.0.5",
     "html2pdf.js": "^0.10.1",
