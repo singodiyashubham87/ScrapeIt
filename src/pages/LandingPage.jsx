@@ -168,7 +168,7 @@ function LandingPage() {
             }`}
           >
             <span
-              className={`w-2/4 h-full ml-8 bg-void rounded-full absolute ${
+              className={`w-2/4 h-full ml-8 bg-void rounded-full transition-all ease-in duration-300 absolute ${
                 darkMode ? "ml-8" : "ml-0"
               }`}
             />
