@@ -258,42 +258,36 @@ function LandingPage() {
                   }
                 }}
               />
-              <div className=" h-[110%] w-[10%] rounded-full absolute right-0 top-1/2 flex justify-center items-center -translate-y-1/2 bg-pri shadow-3xl ">
+              <div className=" h-[110%] w-[10%] rounded-full absolute right-0 top-1/2 flex justify-center items-center -translate-y-1/2 shadow-3xl selection:bg-pri selection:text-sec bg-black">
                 <img src={search} className="search  h-5 w-auto " />
               </div>
             </div>
             <div className="radioButtons my-2 w-[100%] flex justify-around items-center">
               <div className="textOnlyRadioButton flex justify-center">
-                <input
-                  className="mr-4 md:mr-8 cursor-pointer"
+                <button
+                  className=" bg-transparent px-4  text-void border-skyblue border-opacity-10 border-2 text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem] mr-4 md:mr-8 cursor-pointer  hover:border-opacity-100 hover:shadow-inner focus:bg-skyblue focus:bg-opacity-100"
                   type="radio"
                   id="textOnly"
                   name="contentType"
                   value={"true"}
-                  onChange={() => setSelectedRadioButton("true")}
-                />
-                <label
-                  className="text-void text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
+                  onClick={() => setSelectedRadioButton("true")}
                   htmlFor="textOnly"
                 >
                   Text Only
-                </label>
+                </button>
               </div>
               <div className="htmlRadioButton flex justify-center">
-                <input
-                  className="mr-4 md:mr-8 cursor-pointer"
+                <button
+                  className=" bg-transparent px-4  text-void border-skyblue border-opacity-10 border-2 text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem] mr-4 md:mr-8 cursor-pointer  hover:border-opacity-100 hover:shadow-inner focus:bg-skyblue focus:bg-opacity-100"
                   type="radio"
                   id="radioHtml"
                   name="contentType"
                   value={"false"}
-                  onChange={() => setSelectedRadioButton("true")}
-                />
-                <label
-                  className="text-void text-[1.2rem] vsm:text-[1.5rem] md:text-[2rem]"
+                  onClick={() => setSelectedRadioButton("true")}
                   htmlFor="radioHtml"
                 >
                   HTML
-                </label>
+                </button>
               </div>
             </div>
             <div className="flex justify-between">

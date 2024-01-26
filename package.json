@@ -16,22 +16,24 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "axios": "^1.6.2",
     "dompurify": "^3.0.5",
+    "axios": "^1.6.5",
+    "dompurify": "^3.0.8",
     "html2pdf.js": "^0.10.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.15.0",
-    "tailwindcss": "^3.3.3"
+    "react-router-dom": "^6.21.3",
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
-    "autoprefixer": "^10.4.15",
-    "eslint": "^8.45.0",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "postcss": "^8.4.32",
-    "vite": "^4.4.12"
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.33",
+    "vite": "^5.0.12"
   }
 }
