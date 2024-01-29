@@ -9,7 +9,7 @@ function Nopage() {
           Error 404!!!
         </div>
         <p className=" text-2xl text-sec">page not found</p>
-        <p className="  bg-skyblue text-void px-5 py-2 text-xl rounded-md hover:bg-darkb hover:text-sec mt-7">
+        <p className="  bg-skyblue text-void px-5 py-2 text-xl rounded-md hover:bg-darkb transition duration-300 ease-linear hover:text-sec mt-7">
           <Link to="/"> GO BACK</Link>
         </p>
       </div>
