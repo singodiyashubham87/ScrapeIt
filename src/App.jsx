@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Homepage from "./pages/Homepage";
-import Nopage from "./pages/Nopage";
+import Errorpage from "./pages/Errorpage";
 
 // The main App component
 
@@ -16,7 +16,7 @@ function App() {
         {/* Route for the homepage */}
         <Route path="/homepage" element={<Homepage />} />
         {/* Route for undefined page*/}
-        <Route path="*" element={<Nopage />} />
+        <Route path="*" element={<Errorpage />} />
       </Routes>
     </Router>
   );

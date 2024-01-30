@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Nopage() {
+function Errorpage() {
   return (
     <>
       <div className="lg:h-screen flex flex-col items-center justify-center bg-pri md:h-screen">
@@ -17,4 +17,4 @@ function Nopage() {
   );
 }
 
-export default Nopage;
+export default Errorpage;
