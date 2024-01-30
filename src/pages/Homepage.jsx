@@ -1,6 +1,6 @@
 import html2pdf from "html2pdf.js";
 import { Link, useNavigate } from "react-router-dom";
-import ghlogo from "../assets/images/ghlogo.png";
+import ghlogo from "../assets/images/ghlogo_white.png";
 
 // Homepage component for displaying scraped data
 
