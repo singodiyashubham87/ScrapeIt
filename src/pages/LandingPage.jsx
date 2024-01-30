@@ -9,6 +9,8 @@ import ghlogo from "../assets/images/ghlogo.png";
 import ghlogo_white from "../assets/images/ghlogo_white.png";
 import data from "../assets/images/data.png";
 import search from "../assets/images/search.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 // LandingPage component for handling scraping and authentication
 function LandingPage() {
   // Auth0 Hooks
@@ -159,13 +161,41 @@ function LandingPage() {
         <div className="content h-[100vh] flex flex-col justify-evenly items-center border-2 border-white-700">
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className={`toggleButton bg-darkb px-4 py-2 hover:bg-white  hover:text-void border-skyblue border-2 fixed top-0 left-0 m-4 ${
+            className={`toggleButton rounded-full bg-darkb hover:bg-white  hover:text-void border-skyblue border-2 fixed top-0 left-0 m-4 flex items-center ${
               darkMode
-                ? "text-white border-skyblue "
-                : "text-sec border-pri hover:bg-[#1D3557]  hover:text-void"
+                ? "dark-mode"
+                : "light-mode border-pri hover:bg-[#1D3557]  hover:text-void"
             }`}
           >
-            {darkMode ? "Light Mode" : "Dark Mode"}
+            <span
+              className={`w-2/4 h-full bg-void rounded-full transition-all ease-in duration-300 absolute ${
+                darkMode ? "ml-8" : "ml-0"
+              }`}
+            />
+            <div className="flex px-3 py-2 items-center">
+              <FontAwesomeIcon
+                icon={faSun}
+                size={darkMode ? 20 : 24}
+                className={`mr-2 text-black transition ${
+                  darkMode ? "opacity-80 text-black" : "opacity-100 text-white"
+                }`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setDarkMode(false);
+                }}
+              />
+              <FontAwesomeIcon
+                icon={faMoon}
+                size={darkMode ? 24 : 20}
+                className={`ml-2 text-black transition ${
+                  darkMode ? "opacity-100 text-black" : "opacity-80"
+                }`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setDarkMode(true);
+                }}
+              />
+            </div>
           </button>
           <Link
             to={"https://github.com/singodiyashubham87/ScrapeIt"}
