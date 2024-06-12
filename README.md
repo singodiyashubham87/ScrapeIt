@@ -49,7 +49,20 @@ npm run dev
 * Enter a URL to scrape and choose between extracting text or HTML content.
 * Download scraped content as a PDF.
 
-  
+## Docker
+
+Build with docker
+
+```bash
+docker build -t scrape-it .
+```
+
+Run with docker
+
+```bash
+docker run --env-file .env --name scrape-it -p 5173:5173 scrape-it
+```
+ 
 ## Credits
 API Ninjas (https://api.api-ninjas.com/): For providing the web scraping API.
 
